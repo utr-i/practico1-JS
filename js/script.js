@@ -61,10 +61,21 @@ const mostrarLibros = (lista = libros) => {
             <td>${libr.genero}</td>
             <td>${libr.leido ? '✅' : '❌'}</td>
             <td>
-                <button onclick="editarLibro(${libros.indexOf(libr)})">Editar</button>
-                <button onclick="eliminarLibro(${libros.indexOf(libr)})">Eliminar</button>
+                <div class="flex gap-2">
+                    <button 
+                        onclick="editarLibro(${libros.indexOf(libr)})"
+                        class="bg-blue-400 hover:bg-blue-500 text-white font-bold py-1 px-2 rounded">
+                        Editar
+                    </button>
+                    <button 
+                        onclick="eliminarLibro(${libros.indexOf(libr)})"
+                        class="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-2 rounded">
+                        Eliminar
+                    </button>
+                </div>
             </td>
         `;
+
         tabla.appendChild(fila);
     });
 
